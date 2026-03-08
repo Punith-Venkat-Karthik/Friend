@@ -1,0 +1,46 @@
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const twilio = require("twilio");
+
+const app = express();
+
+app.use(cors());
+app.use(bodyParser.json());
+
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+
+const client = twilio(accountSid, authToken);
+
+const fromNumber = "whatsapp:+14155238886";
+const toNumber = "whatsapp:+916281354121";
+
+app.post("/send-message", async (req, res) => {
+
+  const message = req.body.message;
+
+  try {
+
+    const msg = await client.messages.create({
+      body: message,
+      from: fromNumber,
+      to: toNumber
+    });
+
+    console.log("Message sent:", msg.sid);
+
+    res.json({ success: true });
+
+  } catch (error) {
+
+    console.log(error);
+    res.status(500).send("Error sending message");
+
+  }
+
+});
+
+app.listen(3000, () => {
+  console.log("Server running on port 3000");
+});
