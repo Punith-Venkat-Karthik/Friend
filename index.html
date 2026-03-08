@@ -461,18 +461,19 @@ document.getElementById("messageForm").addEventListener("submit", async function
 
 e.preventDefault();
 
-window.location.href = "thankyou.html";
+const message = document.getElementById("messageInput").value;
+const btn = document.getElementById("sendBtn");
 
 btn.disabled = true;
 
-/* wake server first */
+/* wake server */
 await fetch("/");
 
-/* small delay */
+/* delay */
 await new Promise(r => setTimeout(r,1000));
 
 /* send message */
-await fetch("/send-message", {
+await fetch("/send-message",{
 method:"POST",
 headers:{
 "Content-Type":"application/json"
@@ -480,14 +481,8 @@ headers:{
 body:JSON.stringify({message})
 });
 
-const msgBox = document.getElementById("successMessage");
-msgBox.classList.add("show");
-
-setTimeout(()=>{
-msgBox.classList.remove("show");
-},3000);
-
-btn.disabled = false;
+/* redirect after message sent */
+window.location.href = "thankyou.html";
 
 });
 
