@@ -1228,3 +1228,23 @@ transform:translateY(0);
 }
 
 }
+/* mobile success message */
+
+@media (max-width:600px){
+
+.success-message{
+bottom:25px;
+left:50%;
+transform:translateX(-50%) translateY(30px);
+padding:12px 20px;
+font-size:14px;
+border-radius:30px;
+width:80%;
+text-align:center;
+}
+
+.success-message.show{
+transform:translateX(-50%) translateY(0);
+}
+
+}
