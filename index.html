@@ -461,43 +461,28 @@ document.getElementById("messageForm").addEventListener("submit", async function
 e.preventDefault();
 
 const message = document.getElementById("messageInput").value;
-
 const btn = document.getElementById("sendBtn");
 
 btn.disabled = true;
 
+/* wake server first */
+await fetch("/");
+
+/* small delay */
+await new Promise(r => setTimeout(r,1000));
+
+/* send message */
 await fetch("/send-message", {
-method: "POST",
-headers: {
-"Content-Type": "application/json"
+method:"POST",
+headers:{
+"Content-Type":"application/json"
 },
-body: JSON.stringify({ message })
+body:JSON.stringify({message})
 });
 
 alert("Message sent ❤️");
 
 btn.disabled = false;
-
-
-/* heart burst */
-
-for(let i=0;i<12;i++){
-
-let heart = document.createElement("div");
-heart.className = "heart-burst";
-heart.innerHTML = "❤";
-
-let x = (Math.random()-0.5)*200;
-let y = (Math.random()-0.5)*200;
-
-heart.style.setProperty("--x", x+"px");
-heart.style.setProperty("--y", y+"px");
-
-btn.appendChild(heart);
-
-setTimeout(()=>heart.remove(),1000);
-alert("Message sent ❤️");
-}
 
 });
 
