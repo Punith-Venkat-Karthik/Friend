@@ -469,7 +469,7 @@ e.preventDefault();
 const message = document.getElementById("messageInput").value;
 const btn = document.getElementById("sendBtn");
 
-await fetch("https://friend-w26t.onrender.com/send-message", {
+await fetch("/send-message", {
 method: "POST",
 headers: {
 "Content-Type": "application/json"
