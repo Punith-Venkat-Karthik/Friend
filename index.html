@@ -473,6 +473,7 @@ await fetch("/");
 await new Promise(r => setTimeout(r,1000));
 
 /* send message */
+try{
 await fetch("/send-message",{
 method:"POST",
 headers:{
@@ -480,7 +481,9 @@ headers:{
 },
 body:JSON.stringify({message})
 });
-
+}catch(err){
+console.log("Message send failed but continuing...");
+}
 /* redirect after message sent */
 window.location.href = "thankyou.html";
 
