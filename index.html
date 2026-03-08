@@ -462,12 +462,9 @@ e.preventDefault();
 
 const message = document.getElementById("messageInput").value;
 
-document.getElementById("messageForm").addEventListener("submit", async function(e){
-
-e.preventDefault();
-
-const message = document.getElementById("messageInput").value;
 const btn = document.getElementById("sendBtn");
+
+btn.disabled = true;
 
 await fetch("/send-message", {
 method: "POST",
@@ -476,6 +473,11 @@ headers: {
 },
 body: JSON.stringify({ message })
 });
+
+alert("Message sent ❤️");
+
+btn.disabled = false;
+
 
 /* heart burst */
 
@@ -494,14 +496,14 @@ heart.style.setProperty("--y", y+"px");
 btn.appendChild(heart);
 
 setTimeout(()=>heart.remove(),1000);
-
+alert("Message sent ❤️");
 }
 
 });
 
-alert("Message sent ❤️");
 
-});
+
+
 </script>
 </body>
 </html>
