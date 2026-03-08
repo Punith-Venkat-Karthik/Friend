@@ -361,6 +361,9 @@ Made with ❤ just for you.
 </div>
 
 </section>
+<div id="successMessage" class="success-message">
+Message sent successfully ❤
+</div>
 
 <script>
 
@@ -480,7 +483,12 @@ headers:{
 body:JSON.stringify({message})
 });
 
-alert("Message sent ❤️");
+const msgBox = document.getElementById("successMessage");
+msgBox.classList.add("show");
+
+setTimeout(()=>{
+msgBox.classList.remove("show");
+},3000);
 
 btn.disabled = false;
 
