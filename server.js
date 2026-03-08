@@ -2,11 +2,19 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const twilio = require("twilio");
+const path = require("path");
 
 const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
+
+/* serve html files */
+app.use(express.static(__dirname));
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "FriendshipBloom.html"));
+});
 
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
@@ -29,7 +37,6 @@ app.post("/send-message", async (req, res) => {
     });
 
     console.log("Message sent:", msg.sid);
-
     res.json({ success: true });
 
   } catch (error) {
@@ -42,5 +49,5 @@ app.post("/send-message", async (req, res) => {
 });
 
 app.listen(process.env.PORT || 3000, () => {
-  console.log("Server running on port 3000");
+  console.log("Server running");
 });
