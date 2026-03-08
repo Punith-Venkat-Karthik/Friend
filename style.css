@@ -1170,3 +1170,61 @@ z-index:999;
 opacity:1;
 transform:translateX(-50%) translateY(0);
 }
+/* THANK YOU NOTE */
+
+.thank-you-note{
+
+display:none;
+
+margin-top:40px;
+padding:40px;
+
+background:#fff6f9;
+border-radius:30px;
+
+box-shadow:0 15px 40px rgba(0,0,0,0.08);
+
+text-align:center;
+
+animation:fadeThank 1s ease;
+}
+
+.thank-you-note h2{
+
+font-size:36px;
+color:#ff6a95;
+margin-bottom:20px;
+
+}
+
+.thank-you-note p{
+
+font-size:18px;
+color:#7a6168;
+line-height:1.7;
+margin-bottom:12px;
+
+}
+
+.thank-small{
+
+font-style:italic;
+opacity:.7;
+
+}
+
+/* animation */
+
+@keyframes fadeThank{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}

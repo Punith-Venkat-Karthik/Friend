@@ -49,7 +49,7 @@ my world hasn't been the same since.
 </div>
 
 <!-- floating hearts -->
-<div class="floating-hearts">
+<div class="hearts">
 <span>❤</span>
 <span>❤</span>
 <span>❤</span>
@@ -94,7 +94,7 @@ never knew I was missing. I am incredibly grateful for you.
 </div>
 
 </div>
-<div class="love-hearts">
+<div class="hearts">
 <span>❤</span>
 <span>❤</span>
 <span>❤</span>
@@ -150,30 +150,30 @@ You make ordinary moments feel sacred.
 
 </div>
 
-<div class="temple-hearts">
+<div class="hearts">
 
 <span>❤</span>
-<span class="star">✧</span>
-<span>❤</span>
-<span>❤</span>
-<span class="star">✧</span>
 
 <span>❤</span>
 <span>❤</span>
-<span class="star">✧</span>
+
+
 <span>❤</span>
 <span>❤</span>
 
-<span class="star">✧</span>
 <span>❤</span>
 <span>❤</span>
-<span class="star">✧</span>
+
+
+<span>❤</span>
 <span>❤</span>
 
 <span>❤</span>
-<span class="star">✧</span>
+
 <span>❤</span>
-<span class="star">✧</span>
+
+<span>❤</span>
+
 <span>❤</span>
 
 </div>
@@ -219,18 +219,18 @@ bring to everyone around you. You deserve the absolute world.
 </div>
 
 <!-- floating hearts and stars -->
-<div class="birthday-float">
+<div class="hearts">
 
 <span>❤</span>
-<span class="star">✦</span>
+
 <span>❤</span>
 <span>❤</span>
-<span class="star">✦</span>
+
 <span>❤</span>
-<span class="star">✦</span>
+
 <span>❤</span>
 <span>❤</span>
-<span class="star">✦</span>
+
 
 </div>
 
@@ -276,7 +276,7 @@ and cherished you are.
 </div>
 
 <!-- floating hearts -->
-<div class="message-hearts">
+<div class="hearts">
 
 <span>❤</span>
 <span>❤</span>
@@ -361,9 +361,7 @@ Made with ❤ just for you.
 </div>
 
 </section>
-<div id="successMessage" class="success-message">
-Message sent successfully ❤
-</div>
+
 
 <script>
 
@@ -463,8 +461,7 @@ document.getElementById("messageForm").addEventListener("submit", async function
 
 e.preventDefault();
 
-const message = document.getElementById("messageInput").value;
-const btn = document.getElementById("sendBtn");
+window.location.href = "thankyou.html";
 
 btn.disabled = true;
 

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Thank You</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: Georgia, serif;
+}
+
+/* PAGE */
+
+body{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background: radial-gradient(circle at center,#ffd6e3 0%,#f3e9ed 60%);
+overflow-x:hidden;
+padding:60px 20px;
+text-align:center;
+}
+
+/* CARD */
+
+.card{
+
+background:#fff6f9;
+
+padding:60px 60px;
+
+border-radius:40px;
+
+box-shadow:0 25px 70px rgba(0,0,0,0.12);
+
+max-width:750px;
+width:100%;
+
+margin:auto;
+
+}
+
+/* TITLE */
+
+h1{
+
+font-size:48px;
+color:#ff6a95;
+margin-bottom:25px;
+
+}
+
+/* TEXT */
+
+p{
+
+font-size:20px;
+color:#7a6168;
+line-height:1.8;
+margin-bottom:15px;
+
+}
+
+.small{
+
+margin-top:20px;
+font-style:italic;
+opacity:.7;
+
+}
+
+/* HEART BACKGROUND */
+
+.hearts{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-1;
+
+}
+
+.hearts span{
+
+position:absolute;
+bottom:-50px;
+font-size:22px;
+color:#ff9ab5;
+
+animation: floatHearts linear infinite;
+
+}
+
+/* RANDOM POSITIONS */
+
+.hearts span:nth-child(1){left:10%;animation-duration:8s;}
+.hearts span:nth-child(2){left:20%;animation-duration:12s;}
+.hearts span:nth-child(3){left:30%;animation-duration:9s;}
+.hearts span:nth-child(4){left:40%;animation-duration:11s;}
+.hearts span:nth-child(5){left:50%;animation-duration:7s;}
+.hearts span:nth-child(6){left:60%;animation-duration:10s;}
+.hearts span:nth-child(7){left:70%;animation-duration:13s;}
+.hearts span:nth-child(8){left:80%;animation-duration:9s;}
+.hearts span:nth-child(9){left:90%;animation-duration:12s;}
+.hearts span:nth-child(10){left:45%;animation-duration:14s;}
+
+@keyframes floatHearts{
+
+0%{
+transform:translateY(0) scale(.8);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-110vh) scale(1.3);
+opacity:0;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- FLOATING HEARTS -->
+
+<div class="hearts">
+
+<span>❤</span>
+<span>❤</span>
+<span>❤</span>
+<span>❤</span>
+<span>❤</span>
+<span>❤</span>
+<span>❤</span>
+<span>❤</span>
+<span>❤</span>
+<span>❤</span>
+
+</div>
+
+<!-- THANK YOU CARD -->
+
+<div class="card">
+
+<h1>❤ Thank You From My Heart ❤</h1>
+
+<p>
+Your message has been received successfully, and I truly
+appreciate that you took a moment to write something from
+your heart.
+</p>
+
+<p>
+Every word you share means more than you might realize.
+It brings a smile, warmth, and happiness knowing that
+you cared enough to send your thoughts.
+</p>
+
+<p>
+Moments like these remind me how special our connection
+and friendship truly are.
+</p>
+
+<p class="small">
+Wishing you a beautiful day filled with smiles,
+kindness, and happiness ✨
+</p>
+
+</div>
+
+</body>
+</html>
